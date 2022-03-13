@@ -2,7 +2,7 @@
 
 | Environment Variable  | Description                                                                                              | Default         |
 |-----------------------|----------------------------------------------------------------------------------------------------------|-----------------|
-| MONGO_USER            | Username of the MongoDB user being used to backup                                                        |                 |
+| MONGO_USERNAME        | Username of the MongoDB user being used to backup                                                        |                 |
 | MONGO_PASSWORD        | Password to authenticate with MONGO_USER                                                                 |                 |
 | MONGO_HOST            | IP/Hostname of the MongoDB Server                                                                        | 127.0.0.1       |
 | MONGO_PORT            | Port where the MongoDB server is listening                                                               | 27017           |
