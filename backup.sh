@@ -7,12 +7,12 @@ mkdir -p /tmp/dumps
 
 FILENAME="mongodump_$(date +%F_%H-%M).tar.gz"
 
-MONGO_ARGS="--host ${MONGO_HOST:-127.0.0.1} --port ${MONGO_PORT:-27017} ${MONGO_USERNAME:+-u $MONGO_USERNAME} ${MONGO_PASSWORD:+-p $MONGO_PASSWORD}"
+MONGO_ARGS="--host=${MONGO_HOST:-127.0.0.1} --port=${MONGO_PORT:-27017} ${MONGO_USERNAME:+-u=$MONGO_USERNAME} ${MONGO_PASSWORD:+-p=$MONGO_PASSWORD}"
 
 echo Backing up databases to $FILENAME
 
 if [[ -z "${MONGO_DATABASES}" ]]; then
-    databases=$(mongo $MONGO_ARGS --eval 'db.adminCommand( { listDatabases: { authorizedDatabases: true } } ).databases.map(x => x.name).join("\n")')
+    databases=$(mongo $MONGO_ARGS --quiet --eval 'db.adminCommand( { listDatabases: { authorizedDatabases: true } } ).databases.map(x => x.name).join("\n")')
 else
     databases=$(echo $MONGO_DATABASES | tr "," "\n")
 fi
@@ -28,7 +28,7 @@ do
 
     echo Dumping $database
 
-    mongodump $MONGO_ARGS --db $database --archive /tmp/dumps/$database.gz --gzip
+    mongodump $MONGO_ARGS --db=$database --archive=/tmp/dumps/$database.gz --gzip
 done
 
 
