@@ -28,7 +28,7 @@ do
 
     echo Dumping $database
 
-    mongodump $MONGO_ARGS --db=$database --archive=/tmp/dumps/$database.gz --gzip
+    mongodump $MONGO_ARGS --db=$database --archive=/tmp/dumps/$database.gz --gzip --quiet
 done
 
 
