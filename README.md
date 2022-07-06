@@ -7,6 +7,7 @@
 | MONGO_HOST            | IP/Hostname of the MongoDB Server                                                                        | 127.0.0.1       |
 | MONGO_PORT            | Port where the MongoDB server is listening                                                               | 27017           |
 | MONGO_DATABASES       | Database names that need to be backed up (split by ",") ie. `my_database,my_other_database`              | (all databases) |
+| MONGO_VERBOSE         | Whether to output full logs of the dump commands                                                         | false           | 
 | AWS_ENDPOINT          | **REQUIRED** S3 Compatible endpoint to upload the backup file to                                         |                 |
 | AWS_ACCESS_KEY_ID     | **REQUIRED** AccessKeyId of the user being used to upload the file                                       |                 |
 | AWS_SECRET_ACCESS_KEY | **REQUIRED** SecretAccessKey of the user being used to upload the file                                   |                 |

@@ -17,6 +17,10 @@ else
     databases=$(echo $MONGO_DATABASES | tr "," "\n")
 fi
 
+if [[ -z $MONGO_VERBOSE ]]; then
+    MONGO_ARGS+=" --quiet"
+fi
+
 for database in $databases
 do
     IS_INTERNAL=$(echo ${INTERNAL_DATABASES[@]} | grep -o $database | wc -w)
@@ -28,7 +32,7 @@ do
 
     echo Dumping $database
 
-    mongodump $MONGO_ARGS --db=$database --archive=/tmp/dumps/$database.gz --gzip --quiet
+    mongodump $MONGO_ARGS --db=$database --archive=/tmp/dumps/$database.gz --gzip ${MONGO_QUIET:+--quiet}
 done
 
 
