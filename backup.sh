@@ -32,7 +32,7 @@ do
 
     echo Dumping $database
 
-    mongodump $MONGO_ARGS --db=$database --archive=/tmp/dumps/$database.gz --zlib ${MONGO_QUIET:+--quiet}
+    mongodump $MONGO_ARGS --db=$database --archive=/tmp/dumps/$database.gz --gzip ${MONGO_QUIET:+--quiet}
 done
 
 
