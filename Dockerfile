@@ -1,6 +1,6 @@
 FROM mongo
 
-RUN apt update -y && apt install -y awscli
+RUN apt update -y && apt install -y awscli curl
 
 ADD backup.sh /usr/local/bin/backup
 

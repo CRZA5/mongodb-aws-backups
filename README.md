@@ -14,3 +14,4 @@
 | AWS_DEFAULT_REGION    | The AWS region used to upload the backup.                                                                | eu-central-1    |
 | AWS_BUCKET            | **REQUIRED** The name of the bucket where backups are uploaded                                           |                 |
 | AWS_BUCKET_PATH       | The prefix of the file name (ie /production/)                                                            | /               |
+| HEARTBEAT_URL         | An endpoint to send a HTTP request to as a ping upon successful backup. Can be used to create monitor.   |                 |
