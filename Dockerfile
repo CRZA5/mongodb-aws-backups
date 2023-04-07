@@ -1,4 +1,4 @@
-FROM mongo
+FROM mongo:4.4
 
 RUN apt update -y && apt install -y awscli curl
 
