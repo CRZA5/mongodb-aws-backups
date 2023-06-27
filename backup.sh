@@ -7,7 +7,7 @@ mkdir -p /tmp/dumps
 
 FILENAME="mongodump_$(date +%F_%H-%M).tar.gz"
 
-MONGO_ARGS="--host=${MONGO_HOST:-127.0.0.1} --port=${MONGO_PORT:-27017} ${MONGO_USERNAME:+-u=$MONGO_USERNAME} ${MONGO_PASSWORD:+-p=$MONGO_PASSWORD} ${MONGO_AUTH_DATABASE:+--authenticationDatabase=$MONGO_AUTH_DATABASE}"
+MONGO_ARGS="--host=${MONGO_HOST:-127.0.0.1} --port=${MONGO_PORT:-27017} ${MONGO_USERNAME:+-u=$MONGO_USERNAME} ${MONGO_PASSWORD:+-p=$MONGO_PASSWORD} ${MONGO_AUTH_DATABASE:+--authenticationDatabase $MONGO_AUTH_DATABASE}"
 
 echo Backing up databases to $FILENAME
 
